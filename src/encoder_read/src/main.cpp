@@ -37,6 +37,6 @@ void chatterCallback(const encoder_msgs::EncoderDataArray::ConstPtr& msg) {
 
     for (int i = 0; i < msg->data.size(); i++) {
         const encoder_msgs::EncoderData &data = msg->data[i];
-        ROS_INFO("Joint %d:\n\tx - %.1f\n\ty - %.1f\n\tz - %.1f", i, data.x, data.y, data.z);
+        ROS_INFO("Joint %d:\n\tx - %.5f\n\ty - %.5f\n\tz - %.5f", i, data.x, data.y, data.z);
     }
 }
