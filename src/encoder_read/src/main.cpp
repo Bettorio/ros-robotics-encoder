@@ -32,6 +32,10 @@ int main (int argc, char **argv) {
     return 0;
 }
 
+/*
+ * This callback provides a readable output of the messages captured, showing
+ * joints coordinates in order.
+ */
 void chatterCallback(const encoder_msgs::EncoderDataArray::ConstPtr& msg) {
 
     std::ostringstream ss;
