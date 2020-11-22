@@ -33,10 +33,9 @@ int main (int argc, char **argv) {
 }
 
 void chatterCallback(const encoder_msgs::EncoderDataArray::ConstPtr& msg) {
-    ROS_INFO("Receiving info about joints: ");
 
     std::ostringstream ss;
-    ss << std::endl << std::endl << " ---------- Reading joints info ---------- " << std::endl;
+    ss << std::endl << " ---------- Reading joints info ---------- " << std::endl;
 
     for (int i = 0; i < msg->data.size(); i++) {
         const encoder_msgs::EncoderData &data = msg->data[i];
