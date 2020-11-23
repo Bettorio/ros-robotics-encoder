@@ -1,16 +1,26 @@
+/* 
+ * -------------------------------------------------------------------
+ * This module has been developed as an exercise for Robotics course
+ * @ UniSa.
+ *
+ * Title:   main.cpp
+ * Author:  Vittorio Fina
+ * Date:    Nov 23, 2020
+ *
+ * This module implements a chatter (publisher) that publishes messages
+ * to the topic "encoder_read" in order to simulate a set of sensors for 
+ * encoder readings, that is position of 6 joints.
+ *
+ * -------------------------------------------------------------------
+ */
+
 #include "ros/ros.h"
-#include "std_msgs/String.h"
 #include "encoder_msgs/EncoderDataArray.h"
 #include "encoder_msgs/EncoderData.h"
 #include <stdlib.h>
 
 using namespace std;
 
-/*
- * This main implements a chatter (publisher) that publishes messages
- * to the topic "encoder_read" in order to simulate a set of sensors for 
- * encoder readings, that is position of 6 joints.
- */ 
 int main(int argc, char **argv) {
 
     /*
@@ -45,6 +55,9 @@ int main(int argc, char **argv) {
         encoder_msgs::EncoderDataArray msg;
 
         for(i = 0; i < joint_num; i++) {
+            /*
+             * Taking from stdin the values.
+             */ 
             printf("Insert x - y - z for joint %d -> ", i);
             cin >> x >> y >> z;
             data.x = x;

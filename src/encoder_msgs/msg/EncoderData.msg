@@ -1,3 +1,6 @@
-float32 x
-float32 y
-float32 z
+# This message contains the information axes about the joint
+#
+
+float32 x       # x coordinate expressed in float
+float32 y       # y coordinate expressed in float
+float32 z       # z coordinate expressed in float

@@ -1,18 +1,32 @@
+/* 
+ * -------------------------------------------------------------------
+ * This module has been developed as an exercise for Robotics course
+ * @ UniSa.
+ *
+ * Title:   main.cpp
+ * Author:  Vittorio Fina
+ * Date:    Nov 23, 2020
+ *
+ * This module implements a talker (subscriber) that heards messages
+ * from the topic "/encoder" in order to simulate a set of controllers
+ * for encoder readings.
+ *
+ * -------------------------------------------------------------------
+ */
+
 #include "ros/ros.h"
-#include "std_msgs/String.h"
 #include "encoder_msgs/EncoderDataArray.h"
 #include "encoder_msgs/EncoderData.h"
 #include <stdlib.h>
 
 using namespace std;
 
+/*
+ * This callback provides a readable output of the messages captured, showing
+ * joints coordinates in order.
+ */
 void chatterCallback(const encoder_msgs::EncoderDataArray::ConstPtr& msg);
 
-/*
- * This main implements a talker (subscriber) that heards messages
- * from the topic "encoder" in order to simulate a set of controllers for 
- * encoder readings.
- */
 int main (int argc, char **argv) {
 
     /*
@@ -32,10 +46,6 @@ int main (int argc, char **argv) {
     return 0;
 }
 
-/*
- * This callback provides a readable output of the messages captured, showing
- * joints coordinates in order.
- */
 void chatterCallback(const encoder_msgs::EncoderDataArray::ConstPtr& msg) {
 
     std::ostringstream ss;
